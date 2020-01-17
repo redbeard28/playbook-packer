@@ -1,0 +1,10 @@
+---
+- name: Prepare
+  hosts: all
+  gather_facts: no
+  become: yes
+
+  roles:
+    - role: bootstrap
+      bootstrap_wait_for_host: yes
+    - role: basetools

@@ -1,0 +1,39 @@
+galaxy_info:
+  role_name: packer
+  author: Jeremie CUADRADO <redbeard28>
+  description: Ansible role for install the latest version of Packer
+  license: GPLv3
+
+  min_ansible_version: 2.9
+
+  platforms:
+    - name: EL
+      versions:
+        - 8
+        - 7
+    - name: Debian
+      versions:
+        - buster
+        - stretch
+    - name: Ubuntu
+      versions:
+        - bionic
+        - trusty
+    - name: Alpine
+      versions:
+        - any
+    - name: MacOSX
+      versions:
+        - 10.13
+
+  galaxy_tags:
+    - system
+    - packaging
+    - build
+    - packer
+    - hashicorp
+    - cloud
+
+  dependencies:
+    - src: redbeard28.bootstrap
+    - src: redbeard28.basetools

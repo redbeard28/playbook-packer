@@ -1,0 +1,8 @@
+---
+# tasks file for ansible-role-packer
+
+- name: Include OS specific variables.
+  include_vars: "{{ ansible_system }}.yml"
+
+- name: Install Packer
+  include_tasks: "setup-{{ ansible_system }}.yml"

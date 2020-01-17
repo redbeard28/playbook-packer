@@ -1,0 +1,16 @@
+---
+- name: Verify
+  hosts: all
+  become: no
+  gather_facts: no
+
+  tasks:
+    - name: run packer
+      command: packer --version
+      register: packer_version
+
+    - name: assert the results
+      assert:
+        that:
+          - packer_version.matched >= 1
+        msg: could not find packer with the right version
